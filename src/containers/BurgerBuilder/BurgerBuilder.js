@@ -33,8 +33,6 @@ class BurgerBuilder extends Component {
     .map(ingKey => ingredients[ingKey])
     .reduce((acc, amount) => acc + amount, 0);
 
-    console.log(sum);
-
     this.setState({purchasable: sum > 0});
   }
 
@@ -60,10 +58,14 @@ class BurgerBuilder extends Component {
     this.setState({purchasing: true});
   }
 
+  purchaseCancelHandler = _ => {
+    this.setState({purchasing: false});
+  }
+
   render() {
     return (
       <Aux>
-        <Modal show={this.state.purchasing}>
+        <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
           <OrderSummary ingredients={this.state.ingredients} />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
