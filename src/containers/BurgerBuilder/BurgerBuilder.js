@@ -62,11 +62,19 @@ class BurgerBuilder extends Component {
     this.setState({purchasing: false});
   }
 
+  purchaseConfirmHandler = _ => {
+    alert('Purchased (to be) confirmed!');
+  }
+
   render() {
     return (
       <Aux>
         <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
-          <OrderSummary ingredients={this.state.ingredients} />
+          <OrderSummary
+            ingredients={this.state.ingredients}
+            purchaseCancelled={this.purchaseCancelHandler}
+            purchaseConfirmed={this.purchaseConfirmHandler}
+          />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls
