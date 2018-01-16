@@ -4,15 +4,15 @@ import classes from './Input.css';
 
 const input = props => {
   let inputElement = null;
-  switch (props.inputtype) {
+  switch (props.elementType) {
     case ('textarea'):
-      inputElement = <textarea className={classes.InputElement} {...props}></textarea>
+      inputElement = <textarea className={classes.InputElement} {...props.elementConfig} value={props.value}></textarea>
       break;
     case ('input'):
-      inputElement = <input className={classes.InputElement} {...props} />
+      inputElement = <input className={classes.InputElement} {...props.elementConfig} value={props.value} />
       break;
     default:
-      inputElement = <input className={classes.InputElement} {...props} />
+      inputElement = <input className={classes.InputElement} {...props.elementConfig} value={props.value} />
       break;
   }
   return (
