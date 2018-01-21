@@ -72,7 +72,7 @@ class ContactData extends Component {
           type: 'text',
           placeholder: 'Spain'
         },
-        value: '',
+        value: 'fastest',
         validation: {
           required: true
         },
@@ -188,9 +188,9 @@ class ContactData extends Component {
 }
 
 const mapStateToProps = state => ({
-  ingredients: state.ingredients,
-  price: state.totalPrice,
-  loading: state.loading
+  ingredients: state.burgerBuilder.ingredients,
+  price: state.burgerBuilder.totalPrice,
+  loading: state.order.loading
 })
 
 const maptDispatchToProps = dispatch => ({
