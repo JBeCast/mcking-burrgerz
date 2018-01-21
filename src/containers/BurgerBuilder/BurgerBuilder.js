@@ -11,7 +11,6 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 import * as actions from '../../store/actions/';
-import burgerBuilder from '../../store/reducers/burgerBuilder';
 
 class BurgerBuilder extends Component {
   state = {

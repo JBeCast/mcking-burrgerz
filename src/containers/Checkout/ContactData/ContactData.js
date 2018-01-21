@@ -5,7 +5,6 @@ import axios from '../../../axios-orders';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
 import { connect } from 'react-redux';
-import withErrorHandling from '../../../hoc/withErrorHandler/withErrorHandler'
 import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import * as actions from '../../../store/actions/'
 
@@ -194,8 +193,8 @@ const mapStateToProps = state => ({
   loading: state.loading
 })
 
-const maptDispatchToProps = dispatch => {
+const maptDispatchToProps = dispatch => ({
   orderBurger: orderData => dispatch(actions.purchaseBurguer(orderData))
-}
+});
 
 export default connect(mapStateToProps, maptDispatchToProps)(withErrorHandler(ContactData, axios));
