@@ -72,7 +72,7 @@ class ContactData extends Component {
           type: 'text',
           placeholder: 'Spain'
         },
-        value: 'fastest',
+        value: '',
         validation: {
           required: true
         },
@@ -87,7 +87,8 @@ class ContactData extends Component {
             {value: 'cheapest', displayValue: 'Cheapest'}
           ]
         },
-        value: 'fastest'
+        value: 'fastest',
+        valid: true
       },
     }
   }
